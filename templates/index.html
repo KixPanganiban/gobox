@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <title>GoBox v0.1</title>
+    </head>
+    <body>
+        Hello, welcome to GoBox!
+        <ul>
+        {{ range $file := .}}
+            {{ if eq ($file.IsDir) (false) }}
+            <li><a href="/files/{{ $file.Name }}">{{ $file.Name }}</a></li>
+            {{ end }}
+        {{ end}}
+        </ul>
+    </body>
+</html>
